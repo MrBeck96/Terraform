@@ -29,11 +29,6 @@ resource "azurerm_storage_blob" "remote_state_blob" {
 }
 
 
-output "storage_container_name" {
-  value = azurerm_storage_container.remote_state_container.name
-}
-
-
 
 
 # This is the child module call to create a Vnet and two subnets
@@ -50,10 +45,3 @@ module "child" {
 }
 
 
-output "vnet_address_space" {
-  value = module.child.vnet_address_space
-}
-
-output "vnet_name" {
-  value = module.child.vnet_name
-}
